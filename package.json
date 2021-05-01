@@ -1,0 +1,37 @@
+{
+  "name": "rhythm-test-backend",
+  "version": "1.0.0",
+  "description": "Backend for rhythm game study",
+  "main": "main.js",
+  "scripts": {
+    "start-prod": "NODE_ENV=production node ./dist/main.js",
+    "start": "npx nodemon --watch src -e ts,js --exec \"npm run compile-and-run-dev\"",
+    "compile-and-run-dev": "tsc && npm run lint && NODE_ENV=development node ./dist/main.js",
+    "lint": "npx eslint \"**/*.ts\" --ignore-pattern node_modules/",
+    "lint-fix": "npx eslint --fix \"**/*.ts\" --ignore-pattern node_modules/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^9.1.2",
+    "@hapi/hapi": "^20.1.2",
+    "@hapi/inert": "^6.0.3",
+    "dotenv": "^8.2.0",
+    "mongodb": "^3.6.6"
+  },
+  "engines": {
+    "node": ">=12.x"
+  },
+  "devDependencies": {
+    "@types/hapi__hapi": "^20.0.8",
+    "@types/hapi__inert": "^5.2.2",
+    "@types/mongodb": "^3.6.12",
+    "@types/node": "^15.0.1",
+    "@typescript-eslint/eslint-plugin": "^4.22.0",
+    "@typescript-eslint/parser": "^4.22.0",
+    "eslint": "^7.25.0",
+    "nodemon": "^2.0.7",
+    "typescript": "^4.2.4"
+  }
+}
